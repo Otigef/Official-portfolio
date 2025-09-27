@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geoffrey Otieno | Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --accent-color: #0ea5e9; /* Tailwind sky-500 */
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        color: #0f172a; /* Tailwind slate-900 */
+        transition: background-color 0.3s ease, color 0.3s ease;
+        background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=2070&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      
+      html.dark body {
+        color: #f8fafc; /* Tailwind slate-50 */
+      }
+      
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-color: rgba(248, 250, 252, 0.6); /* Tailwind slate-50 with opacity */
+        z-index: -1;
+        transition: background-color 0.3s ease;
+      }
+      
+      html.dark body::before {
+        background-color: rgba(15, 23, 42, 0.7); /* Tailwind slate-900 with opacity */
+      }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #e2e8f0; /* slate-200 */
+      }
+      html.dark ::-webkit-scrollbar-track {
+        background: #1e293b; /* slate-800 */
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #94a3b8; /* slate-400 */
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #64748b; /* slate-500 */
+      }
+      
+      /* Blinking cursor for typing effect */
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+      .cursor-blink {
+        animation: blink 1s step-end infinite;
+      }
+      
+      /* Slow spinning animation for gear icon */
+      @keyframes spin-slow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .animate-spin-slow {
+        animation: spin-slow 15s linear infinite;
+      }
+
+      /* Subtle bouncing animation for scroll-down icon */
+      @keyframes bounce-subtle {
+        0%, 100% {
+          transform: translateY(-15%);
+          animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+        }
+        50% {
+          transform: translateY(0);
+          animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        }
+      }
+      .animate-bounce-subtle {
+        animation: bounce-subtle 1.5s infinite;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
